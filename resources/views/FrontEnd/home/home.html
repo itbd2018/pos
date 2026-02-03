@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+        />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <title>LaptopAche - Modern E-commerce</title>
+                <link
+                    rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+                />
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+                />
+                <style>
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+
+                    body {
+                        font-family: "Inter", -apple-system, BlinkMacSystemFont,
+                            "Segoe UI", Roboto, sans-serif;
+                        line-height: 1.6;
+                        color: #333;
+                        background-color: #f8fafc;
+                    }
+
+                    /* Header Styles */
+                    .header {
+                        background: #ff914d;
+                        color: white;
+                        padding: 0.5rem 0;
+                        font-size: 0.875rem;
+                    }
+
+                    .header-container {
+                        max-width: 1400px;
+                        margin: 0 auto;
+                        padding: 0 1rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .header-left {
+                        display: flex;
+                        gap: 1.5rem;
+                        align-items: center;
+                    }
+
+                    .header-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: rgba(255, 255, 255, 0.9);
+                        text-decoration: none;
+                        transition: color 0.3s ease;
+                    }
+
+                    .header-item:hover {
+                        color: white;
+                    }
+
+                    .header-right {
+                        display: flex;
+                        gap: 1rem;
+                        align-items: center;
+                    }
+
+                    .social-links {
+                        display: flex;
+                        gap: 1rem;
+                    }
+
+                    .social-links a {
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 1.1rem;
+                        transition: color 0.3s ease;
+                    }
+
+                    .social-links a:hover {
+                        color: white;
+                    }
+
+                    /* Advanced Navbar Styles */
+                    .navbar {
+                        background: rgba(255, 255, 255, 0.95);
+                        backdrop-filter: blur(10px);
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                        position: sticky;
+                        top: 0;
+                        z-index: 1000;
+                        transition: all 0.3s ease;
+                    }
+
+                    .navbar.scrolled {
+                        background: rgba(255, 255, 255, 0.98);
+                        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .nav-container {
+                        max-width: 1400px;
+                        margin: 0 auto;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 1rem;
+                        gap: 2rem;
+                    }
+
+                    /* Logo Styles */
+                    .logo {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .logo a {
+                        font-size: 1.8rem;
+                        font-weight: 800;
+                        color: #2d3748;
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .logo-icon {
+                        background: #ff914d;
+                        color: white;
+                        padding: 0.5rem;
+                        border-radius: 12px;
+                        font-size: 1.2rem;
+                    }
+
+                    .logo span {
+                        background: #ff914d;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    }
+
+                    /* Enhanced Search Bar */
+                    .search-section {
+                        flex: 1;
+                        max-width: 600px;
+                        position: relative;
+                    }
+
+                    .search-bar {
+                        position: relative;
+                        width: 100%;
+                    }
+
+                    .search-bar input {
+                        width: 100%;
+                        padding: 0.875rem 1rem 0.875rem 3rem;
+                        border: 2px solid #e2e8f0;
+                        border-radius: 50px;
+                        outline: none;
+                        font-size: 0.95rem;
+                        transition: all 0.3s ease;
+                        background: white;
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .search-bar input:focus {
+                        border-color: #ff914d;
+                        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                    }
+
+                    .search-icon {
+                        position: absolute;
+                        left: 1rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #94a3b8;
+                        font-size: 1.1rem;
+                    }
+
+                    .search-bar button {
+                        position: absolute;
+                        right: 4px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        height: calc(100% - 8px);
+                        padding: 0 1.5rem;
+                        background: #ff914d;
+                        color: white;
+                        border: none;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                    }
+
+                    .search-bar button:hover {
+                        background: linear-gradient(
+                            135deg,
+                            #5a67d8 0%,
+                            #6b46c1 100%
+                        );
+                        transform: translateY(-50%) scale(1.05);
+                    }
+
+                    /* Navigation Links */
+                    .nav-links {
+                        display: flex;
+                        gap: 2rem;
+                        align-items: center;
+                    }
+
+                    .nav-links > a,
+                    .nav-links > .dropdown > a {
+                        color: #4a5568;
+                        text-decoration: none;
+                        font-weight: 500;
+                        padding: 0.75rem 1rem;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        border-radius: 8px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .nav-links > a:hover,
+                    .nav-links > .dropdown > a:hover {
+                        color: #ff914d;
+                        background: rgba(102, 126, 234, 0.1);
+                    }
+
+                    .nav-links > a.active {
+                        color: #ff914d;
+                        background: rgba(102, 126, 234, 0.1);
+                    }
+
+                    /* Dropdown Styles */
+                    .dropdown {
+                        position: relative;
+                    }
+
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background: white;
+                        min-width: 250px;
+                        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+                        border-radius: 12px;
+                        padding: 0.5rem 0;
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: all 0.3s ease;
+                        border: 1px solid #e2e8f0;
+                    }
+
+                    .dropdown:hover .dropdown-content {
+                        display: block;
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    .dropdown-content a {
+                        padding: 0.75rem 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.75rem;
+                        color: #4a5568;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                        font-weight: 500;
+                    }
+
+                    .dropdown-content a:hover {
+                        background: rgba(102, 126, 234, 0.1);
+                        color: #ff914d;
+                    }
+
+                    .dropdown-content a i {
+                        font-size: 1.1rem;
+                        width: 20px;
+                    }
+
+                    /* Action Buttons */
+                    .nav-actions {
+                        display: flex;
+                        gap: 1rem;
+                        align-items: center;
+                    }
+
+                    .action-btn {
+                        color: #4a5568;
+                        text-decoration: none;
+                        position: relative;
+                        padding: 0.75rem;
+                        transition: all 0.3s ease;
+                        border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: rgba(248, 250, 252, 0.8);
+                        border: 1px solid #e2e8f0;
+                        min-width: 44px;
+                        height: 44px;
+                    }
+
+                    .action-btn:hover {
+                        color: #ff914d;
+                        background: rgba(102, 126, 234, 0.1);
+                        border-color: #ff914d;
+                        transform: translateY(-1px);
+                    }
+
+                    .action-btn i {
+                        font-size: 1.2rem;
+                    }
+
+                    .cart-count {
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        background: #ff914d;
+                        color: white;
+                        border-radius: 50%;
+                        padding: 0.2rem 0.5rem;
+                        font-size: 0.75rem;
+                        font-weight: bold;
+                        min-width: 20px;
+                        height: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    /* Mobile Menu Button */
+                    .mobile-menu-btn {
+                        display: none;
+                        background: none;
+                        border: none;
+                        font-size: 1.5rem;
+                        color: #4a5568;
+                        cursor: pointer;
+                        padding: 0.5rem;
+                        border-radius: 8px;
+                        transition: all 0.3s ease;
+                    }
+
+                    .mobile-menu-btn:hover {
+                        background: rgba(102, 126, 234, 0.1);
+                        color: #ff914d;
+                    }
+
+                    /* Responsive Design */
+                    @media (max-width: 768px) {
+                        .header {
+                            display: none;
+                        }
+
+                        .nav-container {
+                            flex-wrap: wrap;
+                            gap: 1rem;
+                        }
+
+                        .search-section {
+                            order: 3;
+                            width: 100%;
+                            max-width: none;
+                        }
+
+                        .nav-links {
+                            display: none;
+                            width: 100%;
+                            order: 4;
+                            flex-direction: column;
+                            padding: 1rem 0;
+                            gap: 0.5rem;
+                            background: white;
+                            border-radius: 12px;
+                            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                            margin-top: 1rem;
+                        }
+
+                        .mobile-menu-btn {
+                            display: block;
+                        }
+
+                        .nav-links.active {
+                            display: flex;
+                        }
+
+                        .dropdown-content {
+                            position: static;
+                            box-shadow: none;
+                            padding-left: 1rem;
+                            background: rgba(248, 250, 252, 0.8);
+                            border: none;
+                            border-radius: 8px;
+                            margin-top: 0.5rem;
+                        }
+
+                        .nav-actions {
+                            gap: 0.5rem;
+                        }
+
+                        .action-btn {
+                            min-width: 40px;
+                            height: 40px;
+                        }
+                    }
+
+                    /* Animations */
+                    @keyframes fadeInUp {
+                        from {
+                            opacity: 0;
+                            transform: translateY(20px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .nav-links.active {
+                        animation: fadeInUp 0.3s ease;
+                    }
+
+                    /* Ripple effect styles */
+                    .ripple-effect {
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.4);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    }
+
+                    @keyframes ripple {
+                        to {
+                            transform: scale(4);
+                            opacity: 0;
+                        }
+                    }
+
+                    /* Banner and existing styles */
+                    .slick-slide {
+                        height: 100%;
+                    }
+                    .slick-list {
+                        height: 100%;
+                    }
+                    .slick-track {
+                        height: 100%;
+                    }
+                    .slick-next {
+                        right: 10px;
+                    }
+                    .slick-prev {
+                        left: 20px;
+                        z-index: 1;
+                    }
+                    .slick-prev:before,
+                    .slick-next:before {
+                        color: black;
+                        font-size: 30px;
+                    }
+                    .main-banner {
+                        display: flex;
+                        gap: 16px;
+                        max-width: 1400px;
+                        margin: 2rem auto;
+                        height: 500px;
+                        padding: 0 1rem;
+                    }
+                    .slider {
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                        gap: 16px;
+                        width: 100%;
+                        height: 500px;
+                    }
+                    .slider img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 15px;
+                        object-fit: cover;
+                    }
+                    .right-banner {
+                        display: grid;
+                        grid-template-rows: repeat(2, 1fr);
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        height: 500px;
+                        gap: 16px;
+                    }
+                    .second-banner-img {
+                        width: 100%;
+                        height: 250px;
+                        border-radius: 15px;
+                        object-fit: cover;
+                    }
+                    .small-banner {
+                        display: flex;
+                        gap: 16px;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        height: 240px;
+                    }
+                    .small-banner-item {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .small-banner-img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 15px;
+                        object-fit: cover;
+                    }
+                    .small-banner-item div {
+                        position: absolute;
+                        top: 50%;
+                        left: 40%;
+                        transform: translate(-50%, -50%);
+                        color: white;
+                        font-size: 18px;
+                        font-weight: bold;
+                        text-shadow: 0px 0px 5px black;
+                        text-align: left;
+                    }
+                    .small-banner-item button {
+                        padding: 8px 16px;
+                        background: #ff914d;
+                        color: white;
+                        border: none;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-weight: 500;
+                    }
+                    .small-banner-item button:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+                    }
+
+                    /* Card Styles */
+                    .card-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 40px auto;
+                        max-width: 1400px;
+                        padding: 0 1rem;
+                    }
+                    .card {
+                        border: 1px solid #e2e8f0;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        width: 300px;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                        background: white;
+                    }
+                    .card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                    }
+                    .card-image {
+                        position: relative;
+                        width: 100%;
+                        height: 200px;
+                        overflow: hidden;
+                    }
+                    .card-image img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.3s ease;
+                    }
+                    .card:hover .card-image img {
+                        transform: scale(1.05);
+                    }
+                    .card-labels {
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        background: linear-gradient(
+                            135deg,
+                            #ef4444 0%,
+                            #dc2626 100%
+                        );
+                        color: white;
+                        padding: 5px 12px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        font-weight: 600;
+                    }
+                    .card-content {
+                        padding: 20px;
+                        text-align: center;
+                    }
+                    .card-title {
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                        line-height: 1.4;
+                    }
+                    .card-title a {
+                        text-decoration: none;
+                        color: #2d3748;
+                        transition: color 0.3s ease;
+                    }
+                    .card-title a:hover {
+                        color: #ff914d;
+                    }
+                    .card-price {
+                        font-size: 18px;
+                        color: #ff914d;
+                        margin-bottom: 20px;
+                        font-weight: 600;
+                    }
+                    .card-buttons {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .card-buttons a {
+                        text-decoration: none;
+                        padding: 10px 16px;
+                        border-radius: 25px;
+                        font-size: 13px;
+                        color: white;
+                        transition: all 0.3s ease;
+                        font-weight: 500;
+                        flex: 1;
+                        text-align: center;
+                    }
+                    .btn-select-options {
+                        background: linear-gradient(
+                            135deg,
+                            #10b981 0%,
+                            #059669 100%
+                        );
+                    }
+                    .btn-select-options:hover {
+                        background: linear-gradient(
+                            135deg,
+                            #059669 0%,
+                            #047857 100%
+                        );
+                        transform: translateY(-1px);
+                    }
+                    .btn-cart {
+                        background: #ff914d;
+                    }
+                    .btn-cart:hover {
+                        background: linear-gradient(
+                            135deg,
+                            #5a67d8 0%,
+                            #6b46c1 100%
+                        );
+                        transform: translateY(-1px);
+                    }
+                </style>
+            </head>
+            <body>
+                <!-- Header Section -->
+                <header class="header">
+                    <div class="header-container">
+                        <div class="header-left">
+                            <a href="tel:+8801234567890" class="header-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+880 123 456 7890</span>
+                            </a>
+                            <a
+                                href="mailto:info@laptopache.com"
+                                class="header-item"
+                            >
+                                <i class="fas fa-envelope"></i>
+                                <span>info@laptopache.com</span>
+                            </a>
+                            <div class="header-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dhaka, Bangladesh</span>
+                            </div>
+                        </div>
+                        <div class="header-right">
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook"
+                                    ><i class="fab fa-facebook-f"></i
+                                ></a>
+                                <a href="#" aria-label="Twitter"
+                                    ><i class="fab fa-twitter"></i
+                                ></a>
+                                <a href="#" aria-label="Instagram"
+                                    ><i class="fab fa-instagram"></i
+                                ></a>
+                                <a href="#" aria-label="LinkedIn"
+                                    ><i class="fab fa-linkedin-in"></i
+                                ></a>
+                            </div>
+                            <div class="header-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Free Shipping on Orders Over ৳5000</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Advanced Navigation -->
+                <nav class="navbar" id="navbar">
+                    <div class="nav-container">
+                        <div class="logo">
+                            <a href="/">
+                                <div class="logo-icon">
+                                    <i class="fas fa-laptop"></i>
+                                </div>
+                                Laptop<span>Ache</span>
+                            </a>
+                        </div>
+
+                        <div class="search-section">
+                            <div class="search-bar">
+                                <i class="fas fa-search search-icon"></i>
+                                <input
+                                    type="text"
+                                    placeholder="Search for laptops, brands, models..."
+                                />
+                                <button type="submit">Search</button>
+                            </div>
+                        </div>
+
+                        <div class="nav-links">
+                            <a href="/" class="active">
+                                <i class="fas fa-home"></i>
+                                Home
+                            </a>
+                            <div class="dropdown">
+                                <a href="/categories">
+                                    <i class="fas fa-th-large"></i>
+                                    Categories
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="#">
+                                        <i class="fas fa-gamepad"></i>
+                                        Gaming Laptops
+                                    </a>
+                                    <a href="#">
+                                        <i class="fas fa-briefcase"></i>
+                                        Business Laptops
+                                    </a>
+                                    <a href="#">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        Student Laptops
+                                    </a>
+                                    <a href="#">
+                                        <i class="fas fa-desktop"></i>
+                                        Workstations
+                                    </a>
+                                    <a href="#">
+                                        <i class="fas fa-feather-alt"></i>
+                                        Ultrabooks
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="/products">
+                                <i class="fas fa-box"></i>
+                                Products
+                            </a>
+                            <a href="/deals">
+                                <i class="fas fa-fire"></i>
+                                Hot Deals
+                            </a>
+                            <a href="/contact">
+                                <i class="fas fa-phone"></i>
+                                Contact
+                            </a>
+                        </div>
+
+                        <div class="nav-actions">
+                            <a
+                                href="/wishlist"
+                                class="action-btn"
+                                title="Wishlist"
+                            >
+                                <i class="fas fa-heart"></i>
+                            </a>
+                            <a
+                                href="/account"
+                                class="action-btn"
+                                title="Account"
+                            >
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <a
+                                href="/cart"
+                                class="action-btn"
+                                title="Shopping Cart"
+                            >
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">3</span>
+                            </a>
+                        </div>
+
+                        <button class="mobile-menu-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </nav>
+
+                <!-- banner -->
+
+                <main>
+                    <div class="main-banner">
+                        <!-- left -->
+                        <div class="slider">
+                            <div>
+                                <img
+                                    src="https://computermania.com.bd/wp-content/uploads/2025/02/Loq-15-i5-1.webp"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <img
+                                    src="https://computermania.com.bd/wp-content/uploads/2025/04/Acer-Aspire-3-A325-R7-web-1.webp"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <!-- right -->
+                        <div class="right-banner">
+                            <div>
+                                <img
+                                    src="https://computermania.com.bd/wp-content/uploads/2025/07/Offer-Banner-Computer-Mania.webp"
+                                    alt=""
+                                    class="second-banner-img"
+                                />
+                            </div>
+                            <div class="small-banner">
+                                <div>
+                                    <div class="small-banner-item">
+                                        <img
+                                            src="https://computermania.com.bd/wp-content/uploads/2025/01/small-banner-1-2-1-920x560-1.jpg"
+                                            alt=""
+                                            class="small-banner-img"
+                                        />
+                                        <div>
+                                            <p>Small Banner 1</p>
+                                            <p>
+                                                Some description for Small
+                                                Banner 1
+                                            </p>
+                                            <button>Shop Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small-banner-item">
+                                        <img
+                                            src="https://computermania.com.bd/wp-content/uploads/2025/01/Ultrabook-Laptop-1-920x560-1.jpg"
+                                            alt=""
+                                            class="small-banner-img"
+                                        />
+                                        <div>
+                                            <p>Small Banner 2</p>
+                                            <p>
+                                                Some description for Small
+                                                Banner 2
+                                            </p>
+                                            <button>Shop Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- Product Card -->
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-image">
+                            <a
+                                href="https://computermania.com.bd/product/lenovo-loq-15-15iax9-gaming-laptop-price/"
+                            >
+                                <img
+                                    src="https://computermania.com.bd/wp-content/uploads/2025/01/1.Lenovo-LOQ-15IAX9-12GB--768x590.webp"
+                                    alt="Lenovo LOQ 15IAX9 Gaming Laptop"
+                                />
+                            </a>
+                            <div class="card-labels">
+                                <span class="onsale">-16%</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                <a
+                                    href="https://computermania.com.bd/product/lenovo-loq-15-15iax9-gaming-laptop-price/"
+                                >
+                                    Lenovo LOQ 15IAX9 | 2024 Model | 15.6" FHD
+                                    144Hz Gaming Laptop Luna Grey
+                                </a>
+                            </h3>
+                            <div class="card-price">
+                                <span>৳102,900</span> – <span>৳108,900</span>
+                            </div>
+                            <div class="card-buttons">
+                                <a href="#" class="btn-select-options">
+                                    Buy Now
+                                </a>
+                                <a href="#" class="btn-cart"> Add to Cart </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // Enhanced JavaScript functionality
+                    $(document).ready(function () {
+                        // Slider initialization
+                        $(".slider").slick({
+                            dots: false,
+                            infinite: true,
+                            speed: 500,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true,
+                            autoplay: true,
+                            autoplaySpeed: 3000,
+                            fade: true,
+                            cssEase: "linear",
+                        });
+
+                        // Navbar scroll effect
+                        $(window).scroll(function () {
+                            if ($(window).scrollTop() > 50) {
+                                $(".navbar").addClass("scrolled");
+                            } else {
+                                $(".navbar").removeClass("scrolled");
+                            }
+                        });
+
+                        // Mobile menu toggle
+                        $(".mobile-menu-btn").click(function () {
+                            $(".nav-links").toggleClass("active");
+                            $(this).find("i").toggleClass("fa-bars fa-times");
+                        });
+
+                        // Search functionality
+                        $(".search-bar input")
+                            .on("focus", function () {
+                                $(this).parent().addClass("focused");
+                            })
+                            .on("blur", function () {
+                                $(this).parent().removeClass("focused");
+                            });
+
+                        // Cart update animation
+                        $(".btn-cart").click(function (e) {
+                            e.preventDefault();
+                            const cartCount = $(".cart-count");
+                            let currentCount = parseInt(cartCount.text());
+                            cartCount.text(currentCount + 1);
+
+                            // Add animation class
+                            cartCount.addClass("animate");
+                            setTimeout(() => {
+                                cartCount.removeClass("animate");
+                            }, 300);
+                        });
+
+                        // Smooth scrolling for anchor links
+                        $('a[href^="#"]').on("click", function (e) {
+                            e.preventDefault();
+                            const target = $(this.getAttribute("href"));
+                            if (target.length) {
+                                $("html, body").animate(
+                                    {
+                                        scrollTop: target.offset().top - 100,
+                                    },
+                                    1000
+                                );
+                            }
+                        });
+                    });
+
+                    // Add some additional interactive features
+                    document.addEventListener("DOMContentLoaded", function () {
+                        // Add ripple effect to buttons
+                        const buttons = document.querySelectorAll(
+                            ".btn-select-options, .btn-cart, .search-bar button"
+                        );
+                        buttons.forEach((button) => {
+                            button.addEventListener("click", function (e) {
+                                const ripple = document.createElement("span");
+                                ripple.classList.add("ripple-effect");
+
+                                const rect = button.getBoundingClientRect();
+                                const size = Math.max(rect.width, rect.height);
+
+                                ripple.style.width = ripple.style.height =
+                                    size + "px";
+                                ripple.style.left =
+                                    e.clientX - rect.left - size / 2 + "px";
+                                ripple.style.top =
+                                    e.clientY - rect.top - size / 2 + "px";
+
+                                button.appendChild(ripple);
+
+                                setTimeout(() => {
+                                    ripple.remove();
+                                }, 600);
+                            });
+                        });
+                    });
+                </script>
+            </body>
+        </html>
+    </head>
+</html>

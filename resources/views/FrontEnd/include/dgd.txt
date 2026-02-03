@@ -1,0 +1,80 @@
+<!-- Start Navigation -->
+<div class="headerd header-dark head-style-2">
+    <div class="container">
+        <nav id="navigation" class="navigation navigation-landscape px-0">
+            <div class="nav-header">
+                <div class="nav-toggle"></div>
+                <div class="nav-menus-wrapper ">
+                    <ul class="nav-menu">
+
+                        <li><a href="{{ route('home') }}" class="pl-0 text-dark">Home</a> |
+
+                        </li>
+
+                        <li>
+
+                            <a href="{{ route('category_list.index') }}" class="text-dark"><span>Category</span>
+                                <span><i class="fa-solid fa-angle-down "
+                                        style="font-size: 14px; color:#2b2b2b !important"></i></span></a>
+
+                            <ul class="nav-dropdown nav-submenu">
+                                @foreach ($menu_featured_categories as $menu_featured_category)
+                                    <li>
+                                        <a
+                                            href="{{ route('product.category', $menu_featured_category->slug) }}">{{ $menu_featured_category->name_en }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            |
+                        </li>
+
+
+                        <li class=""><a href="{{ route('product.show') }}">Shop</a>
+                            |
+                        </li>
+                        <li class=""><a href="{{ route('page.about') }}">About Us</a>
+                            |
+                        </li>
+                        <li class=""><a href="{{ route('page.contact') }}">Contact Us</a>
+
+                        </li>
+                        <!-- <li class="d-block d-lg-none"><a>Top Categories</a>
+                            <ul class="nav-dropdown nav-submenu bg-theme">
+                                <li><a href="{{ route('category_list.index') }}" class="text-white">All Categories</a>
+                                    @php $i =1; @endphp
+                                    @foreach ($menu_featured_categories as $category)
+{{-- @if ($category->parent_id == 0) --}}
+                                    @if ($i == 6)
+@php break; @endphp
+@endif
+                                <li><a href="{{ route('product.category', $category->slug) }}" class="text-white">{{ $category->name_en }}</a>
+                                    {{-- @php $subcategories = findChildCategory($category->id) @endphp --}}
+                                    {{-- @if (count($subcategories) > 0) --}}
+                                    {{-- <ul class="nav-dropdown nav-submenu"> --}}
+                                    {{-- @foreach ($subcategories as $subcategory) --}}
+                                    {{-- <li><a href="">{{$subcategory->name_en}}</a>
+                                </li> --}}
+                                {{-- @endforeach --}}
+                                {{-- </ul> --}}
+                                {{-- @endif --}}
+                        </li>
+                        @php $i++; @endphp
+                        {{-- @endif --}}
+@endforeach
+                    </ul>
+                    </li> -->
+
+                        {{-- <li><a href="javascript:void(0);">Pages</a> --}}
+                        {{-- <ul class="nav-dropdown nav-submenu"> --}}
+
+                        {{-- </ul> --}}
+                        {{-- </li> --}}
+
+                        {{-- <li><a href="docs.html">Docs</a></li> --}}
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
